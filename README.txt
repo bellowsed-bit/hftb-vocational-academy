@@ -1,35 +1,64 @@
-WORK-LIFE BALANCE ONLY + HOMEPAGE VOTING
+HOMES FOR THE BRAVE VOCATIONAL SERVICES ACADEMY
+PERSONAL PROGRESS & ACTION PLAN — LIVE UPDATE
 
-This version contains:
-- index.html
-- module-1.html
-- module-2.html
-- module-3.html
-- vote.html
-- image.png
-- README.txt
+WHAT THIS VERSION CONTAINS
+- Work-Life Balance Module 1
+- Work-Life Balance Module 2
+- Work-Life Balance Module 3
+- My Personal Progress & Action Plan
+- Permanent voting section on the Academy homepage
+- No healthcare pages or healthcare modules
+- No Vocational Specialist Discussion Notes section
 
-It contains no healthcare pages or healthcare links.
+NEW FILE
+personal-progress.html
 
-Before uploading, delete these files from GitHub if they are present:
-healthcare-explorer.html
-healthcare-module-1.html
-healthcare-module-2.html
-healthcare-module-3.html
-healthcare-module-4.html
-healthcare-module-5.html
+UPDATED FILE
+index.html
 
-UPLOAD STEPS
-1. Download and extract the ZIP.
-2. Sign in to GitHub.
-3. Open Your repositories.
-4. Open the existing Academy repository.
-5. Delete the healthcare files listed above.
-6. Click Add file > Upload files.
-7. Upload every file from the extracted folder.
-8. Commit message:
-   Restore Work-Life Balance Academy with homepage voting
-9. Commit directly to main.
-10. Wait 2–5 minutes.
-11. Open the existing github.io link.
-12. Press Ctrl+F5.
+OTHER FILES INCLUDED
+module-1.html
+module-2.html
+module-3.html
+vote.html
+image.png
+README.txt
+
+HOW TO UPDATE THE EXISTING GITHUB WEBSITE
+1. Download the ZIP file.
+2. Open the Downloads folder.
+3. Right-click the ZIP file.
+4. Select Extract All.
+5. Click Extract.
+6. Sign in to GitHub.
+7. Click your profile picture in the upper-right corner.
+8. Click Your repositories.
+9. Open the existing Vocational Services Academy repository.
+10. Click Add file.
+11. Click Upload files.
+12. Open the extracted folder.
+13. Select every file in the folder.
+14. Drag the files into GitHub.
+15. Wait until every filename appears.
+16. In the commit-message box, enter:
+    Add Personal Progress and Action Plan
+17. Select Commit directly to the main branch.
+18. Click Commit changes.
+19. Wait two to five minutes.
+20. Open the existing github.io Academy link.
+21. Press Ctrl + F5 on Windows.
+
+TESTING
+1. Open the Academy homepage.
+2. Confirm Modules 1–3 appear.
+3. Confirm My Personal Progress & Action Plan appears.
+4. Open the summary page.
+5. Complete and save answers in Modules 1–3.
+6. Return to the summary page.
+7. Click Refresh From Modules.
+8. Confirm the combined summary appears.
+9. Confirm there is no Vocational Specialist Discussion Notes section.
+10. Test Print or Save as PDF.
+11. Test Download Summary.
+
+NO NEW REPOSITORY OR NEW PUBLIC LINK IS REQUIRED.

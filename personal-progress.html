@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Personal Progress & Action Plan</title>
+<style>
+:root{--navy:#12395b;--green:#2f6b4f;--purple:#6b4aa0;--bg:#f4f7fa;--text:#17212b;--muted:#5d6a76;--border:#d5dde5}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+header{background:#fff;border-bottom:5px solid var(--navy);padding:18px 16px}.brand{max-width:980px;margin:auto;display:flex;align-items:center;gap:16px}
+.brand img{width:82px;height:104px;object-fit:contain}.brand h1{margin:0;color:var(--navy);font-size:1.65rem}.brand p{margin:.2rem 0;color:var(--muted)}
+main{max-width:980px;margin:auto;padding:24px 14px 50px}.preview{background:#fff7d6;border:1px solid #e4cf7a;border-radius:10px;padding:12px 14px;margin-bottom:18px}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.toolbar button,.toolbar a{border:0;border-radius:9px;padding:11px 14px;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none}
+.primary{background:var(--navy);color:#fff}.secondary{background:#e5edf3;color:var(--navy)}.sample{background:var(--purple);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}section{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(18,57,91,.06)}
+section h2{margin-top:0;color:var(--navy)}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}.metric{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.metric strong{display:block;font-size:1.4rem;color:var(--navy)}.progress-wrap{background:#e4eaf0;border-radius:999px;height:14px;overflow:hidden}.progress-bar{height:100%;background:var(--green);width:0}
+.empty{color:var(--muted);font-style:italic}.callout{background:#eef5fa;border-left:6px solid var(--navy);border-radius:9px;padding:13px 15px}.status{font-weight:700;color:var(--green);min-height:24px}
+textarea{width:100%;min-height:120px;border:1px solid #aab7c3;border-radius:9px;padding:11px;font-size:16px}
+@media(max-width:760px){.grid,.meta{grid-template-columns:1fr}.brand h1{font-size:1.3rem}}
+@media print{.toolbar,.preview{display:none!important}body{background:#fff}section,.metric{box-shadow:none}}
+</style>
+</head>
+<body>
+<header><div class="brand"><img src="image.png" alt="Homes for the Brave logo"><div><h1>My Personal Progress &amp; Action Plan</h1><p>Finding Work-Life Balance — Combined Summary</p></div></div></header>
+<main>
+<div class="preview"><strong>Private preview:</strong> Click “Load Sample Data” to see a completed example. Sample data does not change saved module answers.</div>
+<div class="toolbar">
+<a class="secondary" href="index.html">← Academy Home</a>
+<button class="sample" id="sampleBtn">Load Sample Data</button>
+<button class="secondary" id="refreshBtn">Refresh From Modules</button>
+<button class="primary" id="printBtn">Print or Save as PDF</button>
+<button class="secondary" id="downloadBtn">Download Summary</button>
+</div>
+<div class="meta">
+<div class="metric"><strong id="completed">0 of 3</strong>Modules with saved responses</div>
+<div class="metric"><strong id="percent">0%</strong>Estimated completion</div>
+<div class="metric"><strong id="priorityCount">0</strong>Priorities identified</div>
+<div class="metric"><strong id="stressCount">0</strong>Stressors identified</div>
+</div>
+<section><h2>Overall Progress</h2><div class="progress-wrap"><div class="progress-bar" id="bar"></div></div><p id="progressText" class="empty">No saved module responses were found.</p></section>
+<div class="grid">
+<section><h2>My Priorities</h2><ul id="priorities"><li class="empty">No priorities identified yet.</li></ul></section>
+<section><h2>My Personal Vision</h2><div id="vision" class="empty">No personal vision responses found.</div></section>
+<section><h2>My Time-Management Challenges</h2><ul id="timeChallenges"><li class="empty">No time challenges identified yet.</li></ul></section>
+<section><h2>My Main Stressors</h2><ul id="stressors"><li class="empty">No stressors identified yet.</li></ul></section>
+<section><h2>Healthy Coping Tools I Selected</h2><ul id="coping"><li class="empty">No coping tools selected yet.</li></ul></section>
+<section><h2>My Support Network</h2><ul id="supports"><li class="empty">No support contacts entered yet.</li></ul></section>
+<section><h2>My Goals and Commitments</h2><ul id="goals"><li class="empty">No goals or commitments found.</li></ul></section>
+<section><h2>Strengths Demonstrated</h2><ul id="strengths"><li class="empty">Complete the modules to generate strengths.</li></ul></section>
+</div>
+<section><h2>Educational Recommendations</h2><div class="callout">These recommendations are for educational reflection only—not clinical advice, diagnosis, or treatment.</div><ul id="recommendations"><li class="empty">Complete or load module responses to generate recommendations.</li></ul></section>
+<section><h2>My 30-Day Action Plan</h2><ul id="actionPlan"><li class="empty">Complete or load module responses to generate an action plan.</li></ul></section>
+<section><h2>Vocational Specialist Discussion Notes</h2><textarea id="notes" placeholder="Optional discussion notes."></textarea></section>
+<div id="status" class="status"></div>
+</main>
+<script>
+const keys={m1:"hftb_wlb_module1_v1",m2:"hftb_wlb_module2_v1",m3:"hftb_wlb_module3_v1"};
+function read(k){try{return JSON.parse(localStorage.getItem(k)||"{}")}catch(e){return {}}}
+function text(d,k){return String(d[k]||"").trim()}
+function selected(d,map){return Object.keys(map).filter(k=>d[k]===true).map(k=>map[k])}
+function uniq(a){return [...new Set(a.filter(Boolean))]}
+function render(id,items,empty){const e=document.getElementById(id);e.innerHTML="";if(!items.length){e.innerHTML='<li class="empty">'+empty+'</li>';return}items.forEach(x=>{const li=document.createElement("li");li.textContent=x;e.appendChild(li)})}
+const pmap={p0:"Health",p1:"Family",p2:"Employment",p3:"Education",p4:"Recovery",p5:"Friends",p6:"Faith",p7:"Financial Stability",p8:"Housing",p9:"Exercise",p10:"Community",p11:"Personal Growth",p12:"Helping Others",p13:"Recreation",p14:"Volunteering",p15:"Peace of Mind"};
+const thief={t1:"Scrolling social media",t2:"Watching too much television",t3:"Oversleeping",t4:"Staying up too late",t5:"Procrastinating",t6:"Worrying instead of acting",t7:"Constant interruptions",t8:"Negative people",t9:"Poor organization",t10:"Saying yes to everything",t11:"Not planning the day",t12:"Phone distractions"};
+const stress={t1:"Financial concerns",t2:"Employment",t3:"Family",t4:"Housing",t5:"Transportation",t6:"Health",t7:"Recovery",t8:"Legal concerns",t9:"Loneliness",t10:"Time management",t11:"Conflict with others",t12:"Uncertainty about the future"};
+const copingMap={c1:"Take a walk",c2:"Stretch",c3:"Practice slow breathing",c4:"Listen to music",c5:"Read",c6:"Pray or meditate",c7:"Talk with a trusted person",c8:"Attend a recovery meeting",c9:"Write in a journal",c10:"Spend time outdoors",c11:"Exercise",c12:"Spend time with family",c13:"Turn off my phone for one hour",c14:"Practice gratitude",c15:"Ask for help",c16:"Use a daily schedule"};
+const commitMap={c1:"Walk for 15 minutes",c2:"Spend one hour with family or supportive people",c3:"Turn my phone off for one hour",c4:"Go to bed 30 minutes earlier",c5:"Exercise",c6:"Read for 20 minutes",c7:"Take one step toward employment",c8:"Keep a daily schedule"};
+
+function build(sample){
+let m1=read(keys.m1),m2=read(keys.m2),m3=read(keys.m3);
+if(sample){
+m1={p0:true,p1:true,p2:true,p7:true,p15:true,oneYear:"Working in a stable position with a predictable schedule.",healthVision:"Sleeping better, walking regularly, and keeping medical appointments.",financeVision:"Following a basic budget.",relationshipVision:"Spending consistent time with supportive family members.",biggestChange:"Create a weekly routine I can realistically maintain.",c1:true,c4:true,c7:true,c8:true,otherCommitment:"Prepare meals ahead of time."};
+m2={t5:true,t9:true,t12:true,priority1:"Protect my health and sleep",priority2:"Continue employment activities",priority3:"Stay connected to supportive people",task1:"Plan the week on Sunday",task2:"Attend scheduled appointments",task3:"Complete two employment tasks",healthPromise:"Go to bed at a consistent time.",relationshipPromise:"Call one supportive person each week.",employmentPromise:"Complete scheduled applications.",habitChange:"Stop waiting until the last minute to plan."};
+m3={t1:true,t2:true,t6:true,c1:true,c3:true,c7:true,c10:true,c15:true,support1:"Vocational Specialist",help1:"Employment planning and accountability",support2:"Trusted friend",help2:"Encouragement",support3:"Case manager",help3:"Help with resources",resetPlan:"Pause, breathe slowly, and decide on one next action.",learned:"Stress is easier to manage when I respond early.",proudOf:"I identified practical changes.",continueNext:"Use a weekly schedule and ask for help sooner."};
+}
+const sets=[m1,m2,m3],completed=sets.filter(d=>Object.values(d).some(v=>v===true||String(v||"").trim())).length;
+const answered=sets.reduce((n,d)=>n+Object.values(d).filter(v=>v===true||String(v||"").trim()).length,0),pct=Math.min(100,Math.round(answered/70*100));
+const priorities=selected(m1,pmap),times=selected(m2,thief),stressors=selected(m3,stress),coping=selected(m3,copingMap);
+const vision=uniq([text(m1,"oneYear")&&"One-year vision: "+text(m1,"oneYear"),text(m1,"healthVision")&&"Health: "+text(m1,"healthVision"),text(m1,"financeVision")&&"Finances: "+text(m1,"financeVision"),text(m1,"relationshipVision")&&"Relationships: "+text(m1,"relationshipVision"),text(m1,"biggestChange")&&"Main change: "+text(m1,"biggestChange")]);
+const supports=[];for(let i=1;i<=4;i++){const a=text(m3,"support"+i),b=text(m3,"help"+i);if(a)supports.push(b?a+" — "+b:a)}
+const goals=uniq([...selected(m1,commitMap),text(m1,"otherCommitment"),text(m2,"priority1"),text(m2,"priority2"),text(m2,"priority3"),text(m2,"task1"),text(m2,"task2"),text(m2,"task3"),text(m2,"healthPromise"),text(m2,"relationshipPromise"),text(m2,"employmentPromise"),text(m2,"habitChange"),text(m3,"resetPlan"),text(m3,"continueNext")]);
+const strengths=[];if(priorities.length)strengths.push("You identified clear personal priorities.");if(vision.length)strengths.push("You described a future direction.");if(times.length)strengths.push("You recognized habits that interfere with your goals.");if(coping.length>=3)strengths.push("You selected several healthy coping strategies.");if(supports.length)strengths.push("You identified a support network.");if(goals.length>=3)strengths.push("You developed concrete commitments.");
+const recs=[];if(times.includes("Poor organization")||times.includes("Procrastinating")||times.includes("Not planning the day"))recs.push("Spend 10–15 minutes each evening planning the next day’s three most important tasks.");if(times.includes("Phone distractions")||times.includes("Scrolling social media"))recs.push("Choose one daily period when phone notifications are turned off.");if(stressors.includes("Financial concerns"))recs.push("Consider reviewing financial concerns with an appropriate case manager or financial-education resource.");if(stressors.includes("Transportation"))recs.push("Include travel time, backup routes, and shift schedules in employment planning.");if(stressors.includes("Employment"))recs.push("Break employment goals into small weekly steps.");if(coping.length)recs.push("Use one selected coping tool early when stress begins: "+coping.slice(0,3).join(", ")+".");if(supports.length)recs.push("Contact an identified support before problems become urgent.");if(!recs.length&&completed)recs.push("Review your priorities weekly and choose one realistic action.");
+const actions=uniq([priorities[0]&&"Protect time for your highest priority: "+priorities[0]+".",text(m1,"biggestChange")&&"Begin this change: "+text(m1,"biggestChange"),text(m2,"task1"),text(m2,"task2"),text(m2,"task3"),text(m3,"resetPlan")&&"Use this stress reset plan: "+text(m3,"resetPlan"),text(m3,"continueNext")]).slice(0,7);
+document.getElementById("completed").textContent=completed+" of 3";document.getElementById("percent").textContent=pct+"%";document.getElementById("priorityCount").textContent=priorities.length;document.getElementById("stressCount").textContent=stressors.length;document.getElementById("bar").style.width=pct+"%";document.getElementById("progressText").textContent=completed?completed+" module(s) contain saved responses. Estimated completion: "+pct+"%.":"No saved module responses were found.";
+render("priorities",priorities,"No priorities identified yet.");const ve=document.getElementById("vision");ve.innerHTML="";if(!vision.length)ve.textContent="No personal vision responses found.";else vision.forEach(x=>{const p=document.createElement("p");p.textContent=x;ve.appendChild(p)});
+render("timeChallenges",times,"No time challenges identified yet.");render("stressors",stressors,"No stressors identified yet.");render("coping",coping,"No coping tools selected yet.");render("supports",supports,"No support contacts entered yet.");render("goals",goals,"No goals or commitments found.");render("strengths",strengths,"Complete the modules to generate strengths.");render("recommendations",recs,"Complete or load module responses to generate recommendations.");render("actionPlan",actions,"Complete or load module responses to generate an action plan.");document.getElementById("status").textContent=sample?"Sample data loaded for preview. Saved module answers were not changed.":"Summary refreshed from saved module responses.";
+}
+function downloadSummary(){const d={generatedAt:new Date().toISOString(),title:"My Personal Progress & Action Plan",notes:document.getElementById("notes").value,module1:read(keys.m1),module2:read(keys.m2),module3:read(keys.m3)};const b=new Blob([JSON.stringify(d,null,2)],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="HFTB_My_Personal_Progress_Action_Plan.json";a.click();URL.revokeObjectURL(u)}
+document.getElementById("sampleBtn").onclick=()=>build(true);document.getElementById("refreshBtn").onclick=()=>build(false);document.getElementById("printBtn").onclick=()=>window.print();document.getElementById("downloadBtn").onclick=downloadSummary;build(false);
+</script>
+</body>
+</html>
