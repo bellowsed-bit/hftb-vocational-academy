@@ -51,7 +51,7 @@ textarea{width:100%;min-height:120px;border:1px solid #aab7c3;border-radius:9px;
 </div>
 <section><h2>Educational Recommendations</h2><div class="callout">These recommendations are for educational reflection only—not clinical advice, diagnosis, or treatment.</div><ul id="recommendations"><li class="empty">Complete or load module responses to generate recommendations.</li></ul></section>
 <section><h2>My 30-Day Action Plan</h2><ul id="actionPlan"><li class="empty">Complete or load module responses to generate an action plan.</li></ul></section>
-<section><h2>Vocational Specialist Discussion Notes</h2><textarea id="notes" placeholder="Optional discussion notes."></textarea></section>
+
 <div id="status" class="status"></div>
 </main>
 <script>
@@ -87,7 +87,7 @@ document.getElementById("completed").textContent=completed+" of 3";document.getE
 render("priorities",priorities,"No priorities identified yet.");const ve=document.getElementById("vision");ve.innerHTML="";if(!vision.length)ve.textContent="No personal vision responses found.";else vision.forEach(x=>{const p=document.createElement("p");p.textContent=x;ve.appendChild(p)});
 render("timeChallenges",times,"No time challenges identified yet.");render("stressors",stressors,"No stressors identified yet.");render("coping",coping,"No coping tools selected yet.");render("supports",supports,"No support contacts entered yet.");render("goals",goals,"No goals or commitments found.");render("strengths",strengths,"Complete the modules to generate strengths.");render("recommendations",recs,"Complete or load module responses to generate recommendations.");render("actionPlan",actions,"Complete or load module responses to generate an action plan.");document.getElementById("status").textContent=sample?"Sample data loaded for preview. Saved module answers were not changed.":"Summary refreshed from saved module responses.";
 }
-function downloadSummary(){const d={generatedAt:new Date().toISOString(),title:"My Personal Progress & Action Plan",notes:document.getElementById("notes").value,module1:read(keys.m1),module2:read(keys.m2),module3:read(keys.m3)};const b=new Blob([JSON.stringify(d,null,2)],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="HFTB_My_Personal_Progress_Action_Plan.json";a.click();URL.revokeObjectURL(u)}
+function downloadSummary(){const d={generatedAt:new Date().toISOString(),title:"My Personal Progress & Action Plan",module1:read(keys.m1),module2:read(keys.m2),module3:read(keys.m3)};const b=new Blob([JSON.stringify(d,null,2)],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="HFTB_My_Personal_Progress_Action_Plan.json";a.click();URL.revokeObjectURL(u)}
 document.getElementById("sampleBtn").onclick=()=>build(true);document.getElementById("refreshBtn").onclick=()=>build(false);document.getElementById("printBtn").onclick=()=>window.print();document.getElementById("downloadBtn").onclick=downloadSummary;build(false);
 </script>
 </body>
