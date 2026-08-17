@@ -1,0 +1,31 @@
+HOMES FOR THE BRAVE — REPLACE THE EXISTING GITHUB PAGES WEBSITE
+
+This ZIP is the complete finished website. You do not need to build it.
+
+Repository:
+https://github.com/bellowsed-bit/hftb-vocational-academy
+
+Final public website:
+https://bellowsed-bit.github.io/hftb-vocational-academy/
+
+STEPS
+
+1. Download and unzip the package.
+2. Open the existing hftb-vocational-academy repository on GitHub.
+3. Stay on the existing main branch. Do not create a new branch.
+4. Remove the old website files from the repository.
+5. Upload every file and folder found INSIDE the unzipped package.
+   Important: index.html must be at the top level of the repository—not inside another folder.
+6. Commit directly to the main branch with a message such as:
+   Replace Academy with complete updated website
+7. Open repository Settings, then Pages.
+8. Under Build and deployment, choose Deploy from a branch.
+9. Select branch: main and folder: /(root), then Save.
+10. Wait a few minutes and open:
+    https://bellowsed-bit.github.io/hftb-vocational-academy/
+
+If an older version appears, refresh the page or open it in a private/incognito window.
+
+The website stores participant responses only in that participant's current browser. A
+participant must return with the same device and browser to see those saved responses,
+unless the participant downloaded and later loaded a backup workbook file.

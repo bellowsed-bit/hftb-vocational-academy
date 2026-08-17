@@ -1,0 +1,28 @@
+:root {
+  --bg: #000 !important;
+  --card: #080d12 !important;
+  --text: #f5f8fb !important;
+  --muted: #a9bbc9 !important;
+  --border: #294258 !important;
+  --navy: #0b3350 !important;
+  --blue: #45a8df !important;
+}
+html, body { background: #000 !important; color: #f5f8fb !important; color-scheme: dark; }
+header { background: #030608 !important; color: #fff !important; border-color: #294258 !important; }
+main, footer { background: #000 !important; color: #f5f8fb !important; }
+section, .card, .metric, .workbook-note, .completion-panel, .callout, .preview {
+  background: #080d12 !important; color: #f5f8fb !important;
+  border-color: #294258 !important; box-shadow: 0 8px 24px #000 !important;
+}
+h1, h2, h3, h4, p, li, label, strong, .brand h1, .brand p, .progress-text, .empty { color: #f5f8fb !important; }
+input, textarea, select { background: #03070a !important; color: #fff !important; border-color: #496579 !important; }
+.secondary, .course-nav a, a.back { background: #102436 !important; color: #dbeaf4 !important; border: 1px solid #29465b !important; }
+.primary, .start, .button { background: #146b9e !important; color: #fff !important; }
+.preview, .preview-note { background: #302718 !important; color: #f7dea4 !important; border-color: #765e2b !important; }
+.progress-wrap { background: #16232d !important; }
+.check { border-color: #263d50 !important; }
+@media print {
+  html, body, main { background: #fff !important; color: #111 !important; }
+  section, .card, .metric { background: #fff !important; color: #111 !important; }
+  h1, h2, h3, p, li, strong, span { color: #111 !important; }
+}
