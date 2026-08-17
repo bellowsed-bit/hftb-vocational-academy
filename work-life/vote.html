@@ -1,16 +1,13 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vote for a Future Academy Topic</title>
-<style>
-body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fa;margin:0;color:#17212b}
-main{max-width:760px;margin:auto;padding:30px 16px}
-.card{background:#fff;border:1px solid #d5dde5;border-radius:14px;padding:24px}
-a.button{display:block;text-align:center;text-decoration:none;background:#12395b;color:#fff;font-weight:700;border-radius:10px;padding:14px;margin:20px 0}
-a.back{color:#12395b;font-weight:700;text-decoration:none}
-</style><link rel="stylesheet" href="dark-theme.css"></head>
-<body><main><div class="card">
-<h1>Vote for a Future Academy Topic</h1>
-<p>This anonymous form helps Vocational Services decide what Academy topic to develop next.</p>
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe9swQr6md-Lpi_sMj4uMlby2AiXQ1wtiGFo--PNFnHaJ1nQw/viewform?usp=header" target="_blank" rel="noopener">Open the Voting Form</a>
-<a class="back" href="../index.html">← Return to the Academy Home Page</a>
-</div></main></body></html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loading Vocational Services Academy…</title></head>
+<body style="margin:0;background:#05090d;color:#fff;font-family:Arial,sans-serif"><p style="padding:24px">Loading course…</p>
+<script>
+fetch("../public/work-life/vote.html")
+  .then(function(response){if(!response.ok)throw new Error("Course file unavailable");return response.text();})
+  .then(function(html){
+    html=html.replaceAll('href="/"','href="../index.html"');
+    document.open();document.write(html);document.close();
+  })
+  .catch(function(){document.body.innerHTML='<p style="padding:24px">The course could not load. <a style="color:#45a8df" href="../index.html">Return to Academy Home</a></p>';});
+</script></body></html>
