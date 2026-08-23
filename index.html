@@ -31,6 +31,19 @@
       .academy-resource-card.results .academy-resource-arrow{color:#ff8795}
       @media(max-width:850px){.academy-resources-grid{grid-template-columns:1fr}.academy-resource-card{min-height:88px}}
       @media(max-width:440px){.academy-resources-bar{padding:18px 12px 20px}.academy-resource-card{grid-template-columns:50px 1fr 20px;padding:14px;gap:11px}.academy-resource-icon{width:50px;height:50px}.academy-resource-icon svg{width:28px;height:28px}}
+
+      /* Full-width Homes for the Brave flag banner */
+      .brand-header{min-height:190px;background-image:linear-gradient(90deg,rgba(2,9,17,.94) 0%,rgba(3,12,22,.82) 48%,rgba(3,10,18,.9) 100%),url("/hftb-vocational-academy/assets/american-flag.jpg")!important;background-size:cover!important;background-position:center 46%!important;background-repeat:no-repeat!important;border-bottom:1px solid #4a6880!important;box-shadow:0 16px 38px rgba(0,0,0,.72)!important}
+      .brand-header:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.4));pointer-events:none}
+      .brand-inner{position:relative;z-index:1;width:min(1420px,calc(100% - 44px))!important;min-height:190px!important;gap:28px!important}
+      .brand-logo-header{width:91px!important;height:121px!important;border:2px solid rgba(255,255,255,.82);box-shadow:0 10px 32px rgba(0,0,0,.7)!important}
+      .organization{font-size:clamp(36px,4.4vw,62px)!important;line-height:1!important;font-weight:950!important;letter-spacing:-.025em;text-shadow:0 3px 12px #000,0 1px 2px #000}
+      .academy{font-size:clamp(13px,1.25vw,18px)!important;letter-spacing:.13em!important;margin-top:9px!important;color:#5fd0ff!important;text-shadow:0 2px 7px #000}
+      .course{font-size:clamp(13px,1.1vw,16px)!important;margin-top:14px!important;color:#e2edf3!important;text-shadow:0 2px 6px #000;flex-wrap:wrap}
+      .header-label{font-size:12px!important;color:#e8f5fb!important;text-shadow:0 2px 7px #000}
+      .academy-link{font-size:14px!important;padding:11px 15px!important;background:rgba(8,31,48,.88)!important;border-color:#75c7ec!important;box-shadow:0 5px 18px rgba(0,0,0,.4)}
+      @media(max-width:700px){.brand-header{min-height:168px;background-position:42% center!important}.brand-inner{width:calc(100% - 24px)!important;min-height:168px!important;gap:14px!important}.brand-logo-header{width:64px!important;height:86px!important}.organization{font-size:clamp(28px,8vw,42px)!important}.academy{font-size:11px!important}.course{font-size:11px!important;gap:5px!important}.course span{width:100%;border-left:0!important;padding-left:0!important}.header-label{display:none}.academy-link{font-size:10px!important;padding:8px!important}}
+      @media(max-width:460px){.brand-inner{align-items:center!important;flex-wrap:wrap!important;padding:18px 0!important}.brand-copy{min-width:calc(100% - 82px)}.header-actions{width:100%!important;align-items:stretch!important}.academy-link{justify-content:center!important}.organization{font-size:29px!important}}
     </style>
   </head>
   <body>
