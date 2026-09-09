@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="A self-guided interview presence and confidence course from Homes for the Brave Vocational Services Academy.">
+  <title>Interview Presence & Confidence | Homes for the Brave</title>
+  <link rel="icon" href="../hftb-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="../hftb-logo.png" alt="Homes for the Brave">
+      <div><strong>Homes for the Brave</strong><span>Vocational Services Academy</span><small>COURSE 003</small></div>
+      <a href="../index.html">⌂ Academy Home</a>
+    </div>
+  </header>
+
+  <nav class="course-nav" aria-label="Interview Skills course modules">
+    <button data-page="home"><b>⌂</b><span>Course Home</span></button>
+    <button data-page="presence"><b>01</b><span>Presence</span></button>
+    <button data-page="mindsets"><b>02</b><span>Mindsets</span></button>
+    <button data-page="body-language"><b>03</b><span>Body Language</span></button>
+    <button data-page="strength-style"><b>04</b><span>Strength Style</span></button>
+    <button data-page="practice"><b>05</b><span>Practice</span></button>
+    <button data-page="summary"><b>✓</b><span>My Summary</span></button>
+  </nav>
+
+  <main>
+    <div id="saveNotice" class="save-notice" role="status" aria-live="polite">Answers save automatically in this browser.</div>
+
+    <section class="page active" data-page-panel="home">
+      <div class="hero">
+        <div><p class="kicker">INTERVIEW SKILLS AT WORK</p><h1>Confidence without pretending.</h1><p>Use practical mindsets, grounded body language, and your natural strengths to make interviews feel more like a professional conversation—and less like a performance.</p><button class="primary" data-go="presence">Begin Course 003 →</button></div>
+        <div class="hero-mark"><span>03</span><strong>INTERVIEW<br>PRESENCE</strong></div>
+      </div>
+      <div class="notice"><strong>Educational self-reflection:</strong> This course is not a psychological assessment or a guarantee of employment. The goal is to practice honest, professional communication—not to manufacture a false personality.</div>
+      <div class="course-map">
+        <article><span>01</span><h2>Interview Presence</h2><p>See how mindset, voice, and body language work together.</p></article>
+        <article><span>02</span><h2>Six Mindsets</h2><p>Replace pressure and approval-seeking with calm, honest communication.</p></article>
+        <article><span>03</span><h2>Body Language</h2><p>Practice grounded movement, alignment, pauses, and clear endings.</p></article>
+        <article><span>04</span><h2>Strength Style</h2><p>Identify which of five interview strengths feels most natural.</p></article>
+        <article><span>05</span><h2>Practice Lab</h2><p>Choose effective responses to realistic interview situations.</p></article>
+        <article><span>✓</span><h2>My Summary</h2><p>Receive a personalized readiness summary and three next steps.</p></article>
+      </div>
+      <div class="storage"><h2>Your private workbook</h2><p>Selections are stored automatically in the browser on this device. Return with the same device and browser to continue. Nothing is submitted to Homes for the Brave.</p><div><button id="downloadWorkbook">Download Backup</button><button id="loadWorkbook">Load Backup</button><button id="startFresh" class="danger">Start Fresh</button><input id="workbookFile" type="file" accept="application/json" hidden></div></div>
+    </section>
+
+    <section class="page" data-page-panel="presence" id="presence">
+      <header class="page-title"><span>01</span><div><p>THE BIG PICTURE</p><h1>Interview Presence</h1><small>Your message is carried by your words, voice, body, and mindset.</small></div></header>
+      <div class="presence-equation"><div><b>MINDSET</b><span>What you believe</span></div><i>+</i><div><b>VOICE</b><span>How you sound</span></div><i>+</i><div><b>BODY</b><span>How you move</span></div><i>=</i><div class="result"><b>PRESENCE</b><span>How others experience you</span></div></div>
+      <div class="split">
+        <article><p class="kicker">PRESSURE MODE</p><h2>Trying to prove yourself</h2><ul><li>Rushes answers</li><li>Searches for approval</li><li>Uses canned language</li><li>Makes the body smaller</li><li>Treats every question like a test</li></ul></article>
+        <article><p class="kicker blue">PROFESSIONAL MODE</p><h2>Exploring mutual fit</h2><ul><li>Pauses before answering</li><li>Shares facts honestly</li><li>Connects experience to purpose</li><li>Uses grounded, open posture</li><li>Treats the interview as a conversation</li></ul></article>
+      </div>
+      <fieldset class="choice" data-question="presenceChoice"><legend>Which idea would help you most before an interview?</legend><label><input type="radio" name="presenceChoice" value="I can treat the interview as a professional conversation."><span>A</span><b>I can treat the interview as a professional conversation.</b></label><label><input type="radio" name="presenceChoice" value="I can pause instead of rushing to fill silence."><span>B</span><b>I can pause instead of rushing to fill silence.</b></label><label><input type="radio" name="presenceChoice" value="I can be honest instead of guessing what they want to hear."><span>C</span><b>I can be honest instead of guessing what they want to hear.</b></label><label><input type="radio" name="presenceChoice" value="I can show interest without trying to force approval."><span>D</span><b>I can show interest without trying to force approval.</b></label></fieldset>
+    </section>
+
+    <section class="page" data-page-panel="mindsets" id="mindsets">
+      <header class="page-title"><span>02</span><div><p>MENTAL PREPARATION</p><h1>The Six Interview Mindsets</h1><small>Choose how useful each mindset would be for you in an interview.</small></div></header>
+      <div id="mindsetCards" class="mindset-cards"></div>
+      <div class="scale-key"><span><b>1</b>Not useful yet</span><span><b>2</b>Somewhat useful</span><span><b>3</b>Very useful</span><span><b>4</b>Essential for me</span></div>
+      <div id="mindsetQuestions" class="rating-list"></div>
+    </section>
+
+    <section class="page" data-page-panel="body-language" id="body-language">
+      <header class="page-title"><span>03</span><div><p>NON-VERBAL MECHANICS</p><h1>Body Language That Supports the Answer</h1><small>The goal is not to pose. It is to look as calm and engaged as you intend to be.</small></div></header>
+      <div id="mechanicCards" class="mechanic-cards"></div>
+      <h2 class="section-heading">My practice priorities</h2>
+      <p class="muted">For each skill, choose the answer that best describes you today.</p>
+      <div id="bodyQuestions" class="body-questions"></div>
+    </section>
+
+    <section class="page" data-page-panel="strength-style" id="strength-style">
+      <header class="page-title"><span>04</span><div><p>PERSONAL STRENGTHS</p><h1>My Interview Strength Style</h1><small>Rate what you naturally do—not what you think an employer wants to hear.</small></div></header>
+      <div class="style-overview">
+        <article><b>HIGH CONVICTION</b><p>Clear belief, decisive answers, and confidence in a direction.</p></article>
+        <article><b>AUTHENTIC</b><p>Honest, direct, and comfortable acknowledging the real story.</p></article>
+        <article><b>FUNNY</b><p>Uses appropriate warmth or light humor to reduce tension.</p></article>
+        <article><b>EMPATHETIC</b><p>Listens carefully and makes the interviewer feel understood.</p></article>
+        <article><b>ENERGETIC</b><p>Brings visible enthusiasm, warmth, and positive momentum.</p></article>
+      </div>
+      <div class="scale-key"><span><b>1</b>Rarely</span><span><b>2</b>Sometimes</span><span><b>3</b>Often</span><span><b>4</b>Almost always</span></div>
+      <div id="styleQuestions" class="rating-list"></div>
+      <div id="liveStyleResult" class="live-result"><strong>Complete all 15 statements to see your result.</strong></div>
+    </section>
+
+    <section class="page" data-page-panel="practice" id="practice">
+      <header class="page-title"><span>05</span><div><p>INTERVIEW PRACTICE LAB</p><h1>Choose the Strongest Response</h1><small>Select the answer that is honest, professional, and focused on mutual fit.</small></div></header>
+      <div id="scenarioQuestions" class="scenario-list"></div>
+    </section>
+
+    <section class="page" data-page-panel="summary" id="summary">
+      <header class="page-title"><span>✓</span><div><p>COURSE 003 SUMMARY</p><h1>My Interview Readiness Summary</h1><small>Your results update automatically as you complete the course.</small></div></header>
+      <div class="summary-actions"><button id="printSummary">Print or Save as PDF</button><button id="downloadSummary">Download Summary</button></div>
+      <div id="summaryContent"></div>
+    </section>
+
+    <nav class="pager" aria-label="Previous and next pages"><button id="previousPage">← Previous</button><span id="pageCount">1 of 7</span><button id="nextPage">Next →</button></nav>
+  </main>
+  <footer>Homes for the Brave Vocational Services Academy • Interview Presence &amp; Confidence</footer>
+  <script src="app.js"></script>
+</body>
+</html>
