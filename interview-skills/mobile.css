@@ -1,0 +1,88 @@
+/* Phone-only refinements. Desktop and tablet layouts remain unchanged. */
+@media (max-width: 520px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .brand {
+    grid-template-columns: 46px minmax(0, 1fr) 42px;
+    gap: 9px;
+  }
+
+  .brand img { width: 46px; height: 61px; }
+  .brand strong { font-size: 19px; }
+  .brand span { font-size: 9px; line-height: 1.2; }
+  .brand > a { width: 42px; height: 42px; }
+
+  .course-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .course-nav button:first-child { grid-column: 1 / -1; }
+
+  .course-nav button {
+    min-height: 46px;
+    padding: 6px 3px;
+    font-size: 11px;
+    line-height: 1.12;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .course-nav button b { font-size: 9px; }
+  .page { padding: 16px 12px; }
+  .hero h1 { font-size: 30px; line-height: 1.02; }
+
+  .page-title {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .page-title h1 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .choice label,
+  .scenario-options label {
+    padding: 11px 10px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .mindset-cards h2,
+  .mechanic-cards h2,
+  .scenario h2 { font-size: 17px; }
+
+  .mindset-cards p,
+  .mechanic-cards p,
+  .scenario p,
+  .summary-card p,
+  .summary-card li { font-size: 14px; }
+
+  .pager {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .pager button {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 9px 5px;
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .pager span { grid-column: 1 / -1; }
+  .summary-actions button { min-height: 44px; }
+
+  .rating-row,
+  .body-question,
+  .scenario,
+  .summary-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}

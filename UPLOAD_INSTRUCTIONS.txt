@@ -1,0 +1,28 @@
+HOMES FOR THE BRAVE VOCATIONAL SERVICES ACADEMY
+PHONE LAYOUT UPDATE — SEPTEMBER 8, 2026
+
+WHAT THIS PACKAGE FIXES
+1. Academy landing page and Communication Skills course fit normal phone screens.
+2. Work-Life Balance pages and activities fit normal phone screens.
+3. The Work-Life Balance seven-day challenge no longer requires a wide desktop layout.
+4. Interview Skills pages, choices, navigation, and summary fit normal phone screens.
+5. On Interview Skills page 7 of 7, the last button now says "Course Complete" and returns to Academy Home.
+6. Desktop and laptop styling remains unchanged.
+
+HOW TO UPDATE GITHUB
+1. Unzip HFTB_Academy_Mobile_Fix_2026-09-08.zip on your computer.
+2. Open https://github.com/bellowsed-bit/hftb-vocational-academy
+3. Make sure the branch selector says main.
+4. Choose Add file, then Upload files.
+5. Open the unzipped folder. Select everything INSIDE the folder and drag it onto GitHub.
+   Do not upload the ZIP itself, and do not place the whole folder inside the repository.
+6. GitHub will show existing files as changed and new files as added. This is expected.
+7. Enter this commit message: Fix phone layouts and final course navigation
+8. Select Commit directly to the main branch, then choose Commit changes.
+9. Wait for the green GitHub Pages deployment check. Then open:
+   https://bellowsed-bit.github.io/hftb-vocational-academy/
+10. On the phone, close the old page and reopen it. If the old layout remains, clear the browser cache or use a private/incognito tab once.
+
+IMPORTANT
+Upload all files in this package together. The new index.html uses the new files in assets,
+and the course folders contain the matching phone fixes.
