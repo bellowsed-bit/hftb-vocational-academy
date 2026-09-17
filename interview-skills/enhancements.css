@@ -1,0 +1,82 @@
+.score-explainer {
+  display: grid;
+  grid-template-columns: minmax(180px, .7fr) 1.3fr;
+  gap: 16px;
+  margin: 20px 0 0;
+  padding: 16px 18px;
+  border: 1px solid #76559f;
+  border-left: 6px solid var(--purple);
+  border-radius: 9px;
+  background: #171021;
+}
+.score-explainer strong { color: #e1c9ff; }
+.score-explainer span { color: #cbd5dc; }
+.live-result { padding: 22px; border-left: 6px solid var(--purple); }
+.live-result h2 { margin: 4px 0 8px; font-size: 28px; line-height: 1.15; }
+.live-result > p { color: #d5dce2; }
+.style-score-bars { display: grid; gap: 9px; margin: 20px 0; }
+.style-score-bars > div {
+  display: grid;
+  grid-template-columns: 145px 1fr 48px;
+  gap: 10px;
+  align-items: center;
+}
+.style-score-bars span { color: #eee; font-size: 12px; font-weight: 900; }
+.style-score-bars > div > div {
+  height: 12px;
+  overflow: hidden;
+  border: 1px solid #3c5262;
+  border-radius: 999px;
+  background: #05080c;
+}
+.style-score-bars i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7451a6, #d296ff);
+}
+.style-score-bars strong { color: #d7c2f4; font-size: 11px; text-align: right; }
+.coaching-panel {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #36546a;
+  border-radius: 8px;
+  background: #07131d;
+}
+.coaching-panel h3 { margin: 0 0 8px; color: #fff; }
+.coaching-panel li { margin: 10px 0; color: #d3dde4; }
+.result-action {
+  margin-top: 17px;
+  padding: 14px;
+  border-left: 4px solid var(--gold);
+  background: #251d10;
+  color: #f4deb2 !important;
+}
+.summary-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0 0 16px;
+  padding: 15px 18px;
+  border: 1px solid #35617c;
+  border-radius: 9px;
+  background: #092235;
+}
+.summary-progress strong { color: #8edcff; font-size: 18px; }
+.summary-progress span { color: #c8d8e2; }
+.save-notice.save-restored { border-color: #398b5a; background: #123522; color: #d8f7e4; }
+.save-notice.save-error { border-color: #b84a54; background: #3b171b; color: #ffdce0; }
+@media (max-width: 800px) {
+  .score-explainer { grid-template-columns: 1fr; }
+  .summary-progress { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 520px) {
+  .score-explainer, .live-result { padding: 14px; }
+  .live-result h2 { font-size: 22px; }
+  .style-score-bars > div { grid-template-columns: 105px minmax(0, 1fr) 42px; gap: 7px; }
+  .style-score-bars span { overflow-wrap: anywhere; font-size: 10px; }
+  .coaching-panel { padding: 12px; }
+  .coaching-panel ol { padding-left: 20px; }
+  .summary-progress { padding: 12px; font-size: 13px; }
+}
